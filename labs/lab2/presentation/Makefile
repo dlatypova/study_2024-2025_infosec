@@ -4,12 +4,12 @@ FILES += $(patsubst %.md, %.html, $(wildcard *.md))
 
 FILTERS =
 PDF_ENGINE =
-PDF_OPTIONS =
+PDF_OPTIONS += --number-sections --variable mainfont="PT Serif" --variable sansfont="PT Sans" --variable monofont="PT Mono"
 PDF_FORMAT_OPTIONS = -t beamer --slide-level=2
 
 FILTERS += --citeproc
 # FILTERS += -F pandoc-crossref
-PDF_ENGINE += --pdf-engine=lualatex
+PDF_ENGINE += --pdf-engine=xelatex
 PDF_OPTIONS += --number-sections
 
 REVEALJS_THEME = beige
